@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title>Eliminar Cliente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/cliente.js"></script>
+</head>
+
+<body onload="obtenerIdEliminacionCliente();">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CRM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../tipo_gestion/listar.html">Tipo de Gestión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../cliente/listar.html">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../usuario/listar.html">Usuarios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../resultado/listar.html">Resultados</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../gestion/listar.html">Gestiones</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Eliminar Cliente</h1>
+        <hr>
+        <div class="card">
+            <div class="card-header">Confirmación de Eliminación</div>
+            <div class="card-body">
+                <p id="lbl_eliminar">¿Desea eliminar este cliente? <b></b></p>
+                <button class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#confirmDeleteModal">Eliminar</button>
+                <button class="btn btn-secondary" onclick="javascript:history.back();">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alerta de confirmación -->
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmar Eliminación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">¿Estás seguro que deseas eliminar este cliente?</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" onclick="eliminarCliente();">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
